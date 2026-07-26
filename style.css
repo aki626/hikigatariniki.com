@@ -77,3 +77,42 @@ p {
   box-shadow: 0 0 25px #0ff, 0 0 45px #0ff;
   transform: scale(1.07);
 }
+/* メンバーカード一覧のレイアウト */
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* カード本体 */
+.member-card {
+  background: #111;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  width: 240px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px #0ff;
+  transition: 0.25s;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #0ff;
+}
+
+/* 名前 */
+.member-name {
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #0ff;
+}
+
+/* 役職 */
+.member-role {
+  font-size: 18px;
+  color: #ff7777;
+  text-shadow: 0 0 8px #f33;
+}
