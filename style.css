@@ -1,4 +1,6 @@
-/* 全体設定 */
+/* ===========================
+   全体設定
+=========================== */
 body {
   background: #0a0a0a;
   color: #fff;
@@ -7,7 +9,9 @@ body {
   padding: 60px 20px;
 }
 
-/* タイトル（ネオン強化） */
+/* ===========================
+   タイトル（ネオン）
+=========================== */
 h1 {
   font-size: 50px;
   letter-spacing: 4px;
@@ -15,7 +19,9 @@ h1 {
   text-shadow: 0 0 15px #0ff, 0 0 35px #0ff;
 }
 
-/* 説明文 */
+/* ===========================
+   説明文
+=========================== */
 .desc {
   font-size: 20px;
   line-height: 1.8;
@@ -23,7 +29,9 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* ルールタイトル */
+/* ===========================
+   ルール
+=========================== */
 h2 {
   font-size: 32px;
   margin-top: 20px;
@@ -31,7 +39,6 @@ h2 {
   text-shadow: 0 0 10px #f33;
 }
 
-/* ルール内容 */
 .rules {
   font-size: 20px;
   color: #ff7777;
@@ -39,7 +46,9 @@ h2 {
   text-shadow: 0 0 10px #f33;
 }
 
-/* メンバー一覧タイトル */
+/* ===========================
+   メンバー一覧タイトル
+=========================== */
 h3 {
   font-size: 28px;
   margin-top: 40px;
@@ -47,13 +56,9 @@ h3 {
   text-shadow: 0 0 10px #0ff;
 }
 
-/* メンバー一覧のテキスト */
-p {
-  font-size: 20px;
-  margin: 5px 0;
-}
-
-/* 右上固定ボタン（ネオン枠復活版） */
+/* ===========================
+   右上固定ボタン
+=========================== */
 .join-btn {
   position: fixed;
   top: 20px;
@@ -65,10 +70,7 @@ p {
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
-
-  /* ネオン枠（これが消えてた） */
   box-shadow: 0 0 12px #0ff, 0 0 25px #0ff;
-
   transition: 0.25s;
   z-index: 9999;
 }
@@ -77,7 +79,10 @@ p {
   box-shadow: 0 0 25px #0ff, 0 0 45px #0ff;
   transform: scale(1.07);
 }
-/* メンバーカード一覧のレイアウト */
+
+/* ===========================
+   メンバーカード一覧
+=========================== */
 .member-list {
   display: flex;
   flex-wrap: wrap;
@@ -86,7 +91,9 @@ p {
   margin-top: 40px;
 }
 
-/* カード本体（光り強化版） */
+/* ===========================
+   メンバーカード（光り強化）
+=========================== */
 .member-card {
   background: #111;
   border: 2px solid #0ff;
@@ -94,6 +101,7 @@ p {
   width: 240px;
   padding: 20px;
   text-align: center;
+  cursor: pointer;
 
   /* ネオン光強化 */
   box-shadow:
@@ -104,7 +112,6 @@ p {
   transition: 0.3s;
 }
 
-/* ホバー時の光り強化 */
 .member-card:hover {
   transform: scale(1.08);
   box-shadow:
@@ -114,7 +121,7 @@ p {
     0 0 70px #0ff;
 }
 
-/* 名前（光り強化） */
+/* 名前 */
 .member-name {
   font-size: 22px;
   margin-bottom: 10px;
@@ -123,7 +130,7 @@ p {
     0 0 20px #0ff;
 }
 
-/* 役職（赤ネオン強化） */
+/* 役職 */
 .member-role {
   font-size: 18px;
   color: #ff7777;
@@ -132,9 +139,38 @@ p {
     0 0 15px #f33;
 }
 
-/* 役職 */
-.member-role {
+/* ===========================
+   個人説明ビュー
+=========================== */
+.profile-view {
+  margin-top: 40px;
+  padding: 30px;
+  background: #111;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 20px #0ff;
+}
+
+/* 戻るボタン */
+.back-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #00ffff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
   font-size: 18px;
-  color: #ff7777;
-  text-shadow: 0 0 8px #f33;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 12px #0ff, 0 0 25px #0ff;
+  transition: 0.25s;
+}
+
+.back-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px #0ff, 0 0 45px #0ff;
 }
