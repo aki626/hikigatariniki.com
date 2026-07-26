@@ -86,7 +86,7 @@ p {
   margin-top: 40px;
 }
 
-/* カード本体 */
+/* カード本体（光り強化版） */
 .member-card {
   background: #111;
   border: 2px solid #0ff;
@@ -94,20 +94,42 @@ p {
   width: 240px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 0 15px #0ff;
-  transition: 0.25s;
+
+  /* ネオン光強化 */
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 35px #0ff;
+
+  transition: 0.3s;
 }
 
+/* ホバー時の光り強化 */
 .member-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #0ff;
+  transform: scale(1.08);
+  box-shadow:
+    0 0 15px #0ff,
+    0 0 30px #0ff,
+    0 0 50px #0ff,
+    0 0 70px #0ff;
 }
 
-/* 名前 */
+/* 名前（光り強化） */
 .member-name {
   font-size: 22px;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px #0ff;
+  text-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+}
+
+/* 役職（赤ネオン強化） */
+.member-role {
+  font-size: 18px;
+  color: #ff7777;
+  text-shadow:
+    0 0 8px #f33,
+    0 0 15px #f33;
 }
 
 /* 役職 */
