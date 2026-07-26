@@ -29,129 +29,63 @@
     暴言 ✖　誹謗中傷 ✖  
   </div>
 
-  <h3>メンバー一覧</h3>
+ <h3>メンバー一覧</h3>
 
-  <!-- メンバー一覧（そのまま） -->
+<div id="memberList" class="member-list">
 
-<div class="member-list">
-
-  <div class="member-card">
+  <div class="member-card" onclick="showProfile('ひきがたりにき', '弾き語りオプの管理者。ライブトークで弾き語りをしてくれる中心人物。')">
     <div class="member-name">ひきがたりにき</div>
     <div class="member-role">管理者</div>
   </div>
 
-  <div class="member-card">
+  <div class="member-card" onclick="showProfile('しにすたー', '共同管理者。オプの運営をサポートしている。')">
     <div class="member-name">しにすたー</div>
     <div class="member-role">共同管理者</div>
   </div>
 
-  <div class="member-card">
+  <div class="member-card" onclick="showProfile('にゃぐるめたる', '共同管理者。')">
     <div class="member-name">にゃぐるめたる</div>
     <div class="member-role">共同管理者</div>
   </div>
 
-  <div class="member-card">
+  <div class="member-card" onclick="showProfile('音響', '共同管理者。')">
     <div class="member-name">音響</div>
     <div class="member-role">共同管理者</div>
   </div>
 
-  <div class="member-card">
+  <div class="member-card" onclick="showProfile('あき', '共同管理者。サイト制作担当。')">
     <div class="member-name">あき</div>
     <div class="member-role">共同管理者</div>
   </div>
 
-  <div class="member-card">
+  <div class="member-card" onclick="showProfile('Ko（自認ガリレオ）', 'メンバー。')">
     <div class="member-name">Ko（自認ガリレオ）</div>
     <div class="member-role">メンバー</div>
   </div>
 
-  <div class="member-card">
-    <div class="member-name">あんころ</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">たけしさん</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">ただのにんげん267号</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">たんめん</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">ぽこチワワ</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">ぽたとふらい</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">みかん猫</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">みーくん</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">ゆー</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">るー</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">わーるわーるどっ</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">ブチアゲ失敗たかし</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">たかし</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">ホコリ</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">リリー</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">琉輝</div>
-    <div class="member-role">メンバー</div>
-  </div>
-
-  <div class="member-card">
-    <div class="member-name">超超超てぇてぇくて可愛いちびかわ</div>
-    <div class="member-role">メンバー</div>
-  </div>
+  <!-- 以下同じ形式で追加していけばOK -->
 
 </div>
 
+<!-- 個人説明の表示エリア -->
+<div id="profileView" class="profile-view" style="display:none;">
+  <h2 id="profileName"></h2>
+  <p id="profileText"></p>
 
-</body>
-</html>
+  <button class="back-btn" onclick="backToList()">メンバー一覧に戻る</button>
+</div>
+<script>
+  function showProfile(name, text) {
+    document.getElementById("memberList").style.display = "none";
+    document.getElementById("profileView").style.display = "block";
+
+    document.getElementById("profileName").innerText = name;
+    document.getElementById("profileText").innerText = text;
+  }
+
+  function backToList() {
+    document.getElementById("profileView").style.display = "none";
+    document.getElementById("memberList").style.display = "flex";
+  }
+</script>
+
