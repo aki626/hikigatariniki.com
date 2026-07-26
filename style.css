@@ -6,7 +6,6 @@ body {
   padding-top: 80px;
 }
 
-/* タイトルをネオン強めに */
 h1 {
   font-size: 50px;
   letter-spacing: 4px;
@@ -14,14 +13,12 @@ h1 {
   text-shadow: 0 0 15px #0ff, 0 0 35px #0ff;
 }
 
-/* 説明文 */
 .desc {
   font-size: 22px;
   opacity: 0.9;
   margin-bottom: 25px;
 }
 
-/* ルール */
 .rules {
   font-size: 18px;
   margin-bottom: 40px;
@@ -29,13 +26,6 @@ h1 {
   text-shadow: 0 0 10px #f33;
 }
 
-/* 音声プレイヤー */
-.player {
-  margin-bottom: 40px;
-  filter: drop-shadow(0 0 12px #0ff);
-}
-
-/* ボタン共通 */
 .btn {
   display: inline-block;
   padding: 15px 30px;
@@ -46,7 +36,6 @@ h1 {
   transition: 0.25s;
 }
 
-/* シアンボタン */
 .btn-cyan {
   background: #00ffff;
   color: #000;
