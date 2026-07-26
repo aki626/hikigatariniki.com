@@ -1,6 +1,3 @@
-/* ===========================
-   全体設定
-=========================== */
 body {
   background: #0a0a0a;
   color: #fff;
@@ -9,9 +6,6 @@ body {
   padding: 60px 20px;
 }
 
-/* ===========================
-   タイトル（ネオン）
-=========================== */
 h1 {
   font-size: 50px;
   letter-spacing: 4px;
@@ -19,9 +13,6 @@ h1 {
   text-shadow: 0 0 15px #0ff, 0 0 35px #0ff;
 }
 
-/* ===========================
-   説明文
-=========================== */
 .desc {
   font-size: 20px;
   line-height: 1.8;
@@ -29,9 +20,6 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* ===========================
-   ルール
-=========================== */
 h2 {
   font-size: 32px;
   margin-top: 20px;
@@ -46,9 +34,6 @@ h2 {
   text-shadow: 0 0 10px #f33;
 }
 
-/* ===========================
-   メンバー一覧タイトル
-=========================== */
 h3 {
   font-size: 28px;
   margin-top: 40px;
@@ -56,9 +41,6 @@ h3 {
   text-shadow: 0 0 10px #0ff;
 }
 
-/* ===========================
-   右上固定ボタン
-=========================== */
 .join-btn {
   position: fixed;
   top: 20px;
@@ -80,9 +62,6 @@ h3 {
   transform: scale(1.07);
 }
 
-/* ===========================
-   メンバーカード一覧
-=========================== */
 .member-list {
   display: flex;
   flex-wrap: wrap;
@@ -91,9 +70,6 @@ h3 {
   margin-top: 40px;
 }
 
-/* ===========================
-   メンバーカード（光り強化）
-=========================== */
 .member-card {
   background: #111;
   border: 2px solid #0ff;
@@ -102,45 +78,27 @@ h3 {
   padding: 20px;
   text-align: center;
   cursor: pointer;
-
-  box-shadow:
-    0 0 10px #0ff,
-    0 0 20px #0ff,
-    0 0 35px #0ff;
-
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 35px #0ff;
   transition: 0.3s;
 }
 
 .member-card:hover {
   transform: scale(1.08);
-  box-shadow:
-    0 0 15px #0ff,
-    0 0 30px #0ff,
-    0 0 50px #0ff,
-    0 0 70px #0ff;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 50px #0ff, 0 0 70px #0ff;
 }
 
-/* 名前 */
 .member-name {
   font-size: 22px;
   margin-bottom: 10px;
-  text-shadow:
-    0 0 10px #0ff,
-    0 0 20px #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
 }
 
-/* 役職 */
 .member-role {
   font-size: 18px;
   color: #ff7777;
-  text-shadow:
-    0 0 8px #f33,
-    0 0 15px #f33;
+  text-shadow: 0 0 8px #f33, 0 0 15px #f33;
 }
 
-/* ===========================
-   個人説明ビュー
-=========================== */
 .profile-view {
   margin-top: 40px;
   padding: 30px;
@@ -154,7 +112,6 @@ h3 {
   box-shadow: 0 0 20px #0ff;
 }
 
-/* 戻るボタン */
 .back-btn {
   margin-top: 20px;
   padding: 12px 20px;
