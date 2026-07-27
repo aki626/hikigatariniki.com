@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <title>弾き語りオープンチャット</title>
 
-  <!-- CSSを確実に読み込む -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+  <!-- ロード画面 -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>読み込み中…</p>
+  </div>
 
   <!-- 右上固定ボタン -->
   <a href="https://openchat-review.me/oc/473699" class="join-btn">
@@ -33,7 +39,6 @@
 
   <h3>メンバー一覧（紹介文は自分で考えてもらってます）</h3>
 
-  <!-- メンバー一覧（自己紹介は自分で考えてもらってます） -->
   <div id="memberList" class="member-list">
 
     <div class="member-card" onclick="showProfile('ひきがたりにき', 'ひきがたりにき　ギターやってます。ライトではよく弾き語りしてます。管理人だけどたいしたことはしてません')">
@@ -60,7 +65,8 @@
       <div class="member-name">あき</div>
       <div class="member-role">共同管理者</div>
     </div>
-        <div class="member-card" onclick="showProfile('Ko（自認ガリレオ）', 'Ko　基本歌うたう　ポケモン正義　俺ガリレオより頭いいと思ってる　よろしく')">
+
+    <div class="member-card" onclick="showProfile('Ko（自認ガリレオ）', 'Ko　基本歌うたう　ポケモン正義　俺ガリレオより頭いいと思ってる　よろしく')">
       <div class="member-name">Ko（自認ガリレオ）</div>
       <div class="member-role">メンバー</div>
     </div>
@@ -134,7 +140,8 @@
       <div class="member-name">リリー</div>
       <div class="member-role">メンバー</div>
     </div>
-        <div class="member-card" onclick="showProfile('琉輝', '説明文準備中')">
+
+    <div class="member-card" onclick="showProfile('琉輝', '説明文準備中')">
       <div class="member-name">琉輝</div>
       <div class="member-role">メンバー</div>
     </div>
@@ -149,7 +156,6 @@
       <div class="member-role">メンバー</div>
     </div>
 
-
   </div>
 
   <!-- 個人説明ビュー -->
@@ -159,9 +165,19 @@
     <button class="back-btn" onclick="backToList()">メンバー一覧に戻る</button>
   </div>
 
-
   <script>
 
+    /* ロード画面フェードアウト */
+    window.addEventListener("load", () => {
+      const loading = document.getElementById("loading");
+      loading.style.opacity = "0";
+
+      setTimeout(() => {
+        loading.style.display = "none";
+      }, 500);
+    });
+
+    /* プロフィール切り替え */
     function showProfile(name, text) {
       document.getElementById("memberList").style.display = "none";
       document.getElementById("profileView").style.display = "block";
@@ -169,14 +185,12 @@
       document.getElementById("profileText").innerText = text;
     }
 
-
     function backToList() {
       document.getElementById("profileView").style.display = "none";
       document.getElementById("memberList").style.display = "flex";
     }
 
   </script>
-
 
 </body>
 </html>
