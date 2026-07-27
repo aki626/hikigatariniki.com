@@ -41,8 +41,6 @@
 
   <div id="memberList" class="member-list">
 
-    <!-- メンバー一覧ここから -->
-
     <div class="member-card" onclick="showProfile('ひきがたりにき', 'ひきがたりにき　ギターやってます。ライトではよく弾き語りしてます。管理人だけどたいしたことはしてません')">
       <div class="member-name">ひきがたりにき</div>
       <div class="member-role">管理者</div>
@@ -168,14 +166,16 @@
   </div>
 
   <script>
-    /* ロード画面フェードアウト */
-    window.addEventListener("load", () => {
+    /* ロード画面（8秒表示） */
+    document.addEventListener("DOMContentLoaded", () => {
       const loading = document.getElementById("loading");
-      loading.style.opacity = "0";
 
       setTimeout(() => {
-        loading.style.display = "none";
-      }, 500);
+        loading.style.opacity = "0";
+        setTimeout(() => {
+          loading.style.display = "none";
+        }, 500);
+      }, 8000); // ← ここが読み込み時間（8秒）
     });
 
     /* プロフィール切り替え */
