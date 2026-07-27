@@ -1,246 +1,181 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>弾き語りオープンチャット</title>
 
-<title>弾き語りオープンチャット</title>
-
-<link rel="stylesheet" href="style.css">
-
-<style>
-/* ロード画面 */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
-  font-size: 20px;
-}
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 6px solid #ddd;
-  border-top-color: #4caf50;
-  border-radius: 50%;
-  animation: spin 1秒 linear infinite;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.fade {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s;
-}
-
-
-/* 参加ボタン */
-.join-btn {
-  position: fixed;
-  right:20px;
-  top:20px;
-  background:#06c755;
-  color:white;
-  padding:12px 20px;
-  border-radius:30px;
-  text-decoration:none;
-}
-
-
-/* 基本 */
-body {
-  font-family:sans-serif;
-  padding:30px;
-  background:#fafafa;
-}
-
-h1 {
-  text-align:center;
-}
-
-.desc {
-  line-height:1.8;
-}
-
-
-/* メンバー */
-.member-list {
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-
-.member-card {
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  width:220px;
-  box-shadow:0 3px 10px #ccc;
-  cursor:pointer;
-}
-
-.member-card:hover {
-  transform:scale(1.03);
-}
-
-
-.member-name {
-  font-weight:bold;
-}
-
-.member-role {
-  color:#777;
-}
-
-
-/* プロフィール */
-.profile-view {
-  background:white;
-  padding:20px;
-  border-radius:15px;
-}
-
-.back-btn {
-  padding:10px 20px;
-}
-</style>
-
+  <!-- CSSを確実に読み込む -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<!-- ロード画面 -->
-<div id="loader">
-  <div class="spinner"></div>
-  <p>読み込み中...</p>
-</div>
-
-
-
-<a href="https://openchat-review.me/oc/473699" class="join-btn">
-オープンチャットに参加する
-</a>
-
-
-
-<h1>
-弾き語りオープンチャット
-</h1>
-
-
-<p class="desc">
-
-このオープンチャットは弾き語りオプです<br>
-できてまだ一か月たってないのにメンバーは25人います！😋<br>
-ライブトークで弾き語りもしています。<br>
-雑談もOKです！<br>
-
-</p>
-
-
-
-<h2>ルール</h2>
-
-<div>
-暴言 ✖　誹謗中傷 ✖
-</div>
-
-
-
-<h3>
-メンバー一覧
-</h3>
-
-
-<div id="memberList" class="member-list">
-
-
-<!-- ここに今のmember-cardを全部貼る -->
-
-
-</div>
-
-
-
-
-<div id="profileView" class="profile-view" style="display:none">
-
-<h2 id="profileName"></h2>
-
-<p id="profileText"></p>
-
-<button class="back-btn" onclick="backToList()">
-戻る
-</button>
-
-</div>
-
-
-
-
-
-<script>
-
-
-// ロード処理
-
-window.addEventListener("load",()=>{
-
-const loader=document.getElementById("loader");
-
-loader.classList.add("fade");
-
-
-setTimeout(()=>{
-loader.style.display="none";
-},500);
-
-
-});
-
-
-
-
-// プロフィール表示
-
-function showProfile(name,text){
-
-document.getElementById("memberList").style.display="none";
-
-document.getElementById("profileView").style.display="block";
-
-document.getElementById("profileName").innerText=name;
-
-document.getElementById("profileText").innerText=text;
-
-}
-
-
-
-
-function backToList(){
-
-document.getElementById("profileView").style.display="none";
-
-document.getElementById("memberList").style.display="flex";
-
-}
-
-
-</script>
+  <!-- 右上固定ボタン -->
+  <a href="https://openchat-review.me/oc/473699" class="join-btn">
+    オープンチャットに参加する
+  </a>
+
+  <h1>弾き語りオープンチャット</h1>
+
+  <p class="desc">
+    このオープンチャットは弾き語りオプです<br>
+    できてまだ一か月たってないのにメンバーは２５（2026 / 07 / 27 1:55 時点では ２４）います！😋<br>
+    このオープンチャットではライブトークで管理者のひきがたりにきさんが弾き語りをしてくれるそうです。<br>
+    もちろん管理者さん以外の人の弾き語りも大歓迎です<br>
+    雑談もOKです！<br>
+    ぜひ参加してみませんか？<br>
+  </p>
+
+  <h2>ルール</h2>
+  <div class="rules">
+    暴言 ✖　誹謗中傷 ✖  
+  </div>
+
+  <h3>メンバー一覧（紹介文は自分で考えてもらってます）</h3>
+
+  <!-- メンバー一覧（自己紹介は自分で考えてもらってます） -->
+  <div id="memberList" class="member-list">
+
+    <div class="member-card" onclick="showProfile('ひきがたりにき', 'ひきがたりにき　ギターやってます。ライトではよく弾き語りしてます。管理人だけどたいしたことはしてません')">
+      <div class="member-name">ひきがたりにき</div>
+      <div class="member-role">管理者</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('しにすたー', 'しにすたー　趣味はゲームと雑談すること　ここのオプの治安維持してます、後ニキの妻だよ')">
+      <div class="member-name">しにすたー</div>
+      <div class="member-role">共同管理者</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('にゃんめたる', 'オデ、感情ナイ、プログラミング、ス…キ')">
+      <div class="member-name">にゃんめたる</div>
+      <div class="member-role">共同管理者</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('音響', 'とくにすごいことはしてません。Webサイトのエンジニアリングを行っています。末長くよろしく〜')">
+      <div class="member-name">音響</div>
+      <div class="member-role">共同管理者</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('あき', 'Webサイトとか作ってます！あまりすごいのは作れないかもですがこれからよろしくお願いします！')">
+      <div class="member-name">あき</div>
+      <div class="member-role">共同管理者</div>
+    </div>
+        <div class="member-card" onclick="showProfile('Ko（自認ガリレオ）', 'Ko　基本歌うたう　ポケモン正義　俺ガリレオより頭いいと思ってる　よろしく')">
+      <div class="member-name">Ko（自認ガリレオ）</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('あんころ', '説明文準備中')">
+      <div class="member-name">あんころ</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('たけしさん', '説明文準備中')">
+      <div class="member-name">たけしさん</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('ただのにんげん267号', '説明文準備中')">
+      <div class="member-name">ただのにんげん267号</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('たんめん', '説明文準備中')">
+      <div class="member-name">たんめん</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('ぽこチワワ', '名前:ぽこちわわ　趣味:歌を歌うこと　毎日一回以上確定でカラオケしてます')">
+      <div class="member-name">ぽこチワワ</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('ぽたとふらい', '説明文準備中')">
+      <div class="member-name">ぽたとふらい</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('みかん猫', '説明文準備中')">
+      <div class="member-name">みかん猫</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('みーくん', '説明文準備中')">
+      <div class="member-name">みーくん</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('ゆー', '説明文準備中')">
+      <div class="member-name">ゆー</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('るー', '説明文準備中')">
+      <div class="member-name">るー</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('わーるわーるどっ', '説明文準備中')">
+      <div class="member-name">わーるわーるどっ</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('ブチアゲ失敗たかし', 'ブチアゲ失敗たかし　犬派でショタボ、イケメンすぎて眩しい　とにかくホームページを見るが仕事（自称）　歌枠でブチアゲをしてブチアゲ成功たかしになりたい　副官が欲しい。　趣味はベイブ〇ード、野球、ドラム')">
+      <div class="member-name">ブチアゲ失敗たかし</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('ホコリ', '説明文準備中')">
+      <div class="member-name">ホコリ</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('リリー', '説明文準備中')">
+      <div class="member-name">リリー</div>
+      <div class="member-role">メンバー</div>
+    </div>
+        <div class="member-card" onclick="showProfile('琉輝', '説明文準備中')">
+      <div class="member-name">琉輝</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('超超超てぇてぇくて可愛いちびかわ', '説明文準備中')">
+      <div class="member-name">超超超てぇてぇくて可愛いちびかわ</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+    <div class="member-card" onclick="showProfile('ぽんた', '説明文準備中')">
+      <div class="member-name">ぽんた</div>
+      <div class="member-role">メンバー</div>
+    </div>
+
+
+  </div>
+
+  <!-- 個人説明ビュー -->
+  <div id="profileView" class="profile-view" style="display:none;">
+    <h2 id="profileName"></h2>
+    <p id="profileText"></p>
+    <button class="back-btn" onclick="backToList()">メンバー一覧に戻る</button>
+  </div>
+
+
+  <script>
+
+    function showProfile(name, text) {
+      document.getElementById("memberList").style.display = "none";
+      document.getElementById("profileView").style.display = "block";
+      document.getElementById("profileName").innerText = name;
+      document.getElementById("profileText").innerText = text;
+    }
+
+
+    function backToList() {
+      document.getElementById("profileView").style.display = "none";
+      document.getElementById("memberList").style.display = "flex";
+    }
+
+  </script>
 
 
 </body>
