@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>弾き語りオープンチャット</title>
 
-  <!-- CSS -->
+  <!-- CSS読み込み -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -40,6 +40,8 @@
   <h3>メンバー一覧（紹介文は自分で考えてもらってます）</h3>
 
   <div id="memberList" class="member-list">
+
+    <!-- メンバー一覧ここから -->
 
     <div class="member-card" onclick="showProfile('ひきがたりにき', 'ひきがたりにき　ギターやってます。ライトではよく弾き語りしてます。管理人だけどたいしたことはしてません')">
       <div class="member-name">ひきがたりにき</div>
@@ -166,7 +168,6 @@
   </div>
 
   <script>
-
     /* ロード画面フェードアウト */
     window.addEventListener("load", () => {
       const loading = document.getElementById("loading");
@@ -189,7 +190,6 @@
       document.getElementById("profileView").style.display = "none";
       document.getElementById("memberList").style.display = "flex";
     }
-
   </script>
 
 </body>
