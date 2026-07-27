@@ -1,4 +1,3 @@
-/* 全体 */
 body {
   background: #000;
   color: #fff;
@@ -128,7 +127,6 @@ h1 {
   transition: opacity 0.5s ease;
 }
 
-/* くるくるアニメーション */
 .spinner {
   width: 60px;
   height: 60px;
