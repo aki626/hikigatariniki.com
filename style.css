@@ -39,56 +39,16 @@ h1 {
   margin-bottom: 40px;
 }
 
-
-.rules {
-  background: #0a0a0f;
-  padding: 20px;
-  border-radius: 12px;
-  border: 2px solid #0ff;
-  box-shadow: 0 0 15px #0ff;
-  color: #e6faff;
+.ru-ru {
+  background: #0a0a0f;              /* 深い黒背景 */
+  padding: 20px;                    /* 内側余白 */
+  border-radius: 12px;              /* 角丸 */
+  border-left: 4px solid #0ff;      /* 左線ネオン */
+  box-shadow: 0 0 15px #0ff;        /* 外側発光 */
+  margin-bottom: 30px;              /* 下余白 */
+  color: #e6faff;                   /* テキスト色 */
   font-family: "Noto Sans JP", sans-serif;
 }
-
-.rules h2 {
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-  margin-bottom: 15px;
-  font-size: 1.6rem;
-}
-
-.rules ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.rules li {
-  background: rgba(0, 255, 255, 0.05);
-  border-left: 3px solid #0ff;
-  padding: 10px 12px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  transition: 0.2s;
-}
-
-.rules li:hover {
-  background: rgba(0, 255, 255, 0.15);
-  box-shadow: 0 0 10px #0ff;
-}
-
-.rules .date {
-  color: #ff66ff;
-  font-weight: bold;
-  margin-right: 10px;
-  text-shadow: 0 0 8px #ff66ff;
-}
-
-.rules .title {
-  color: #e6faff;
-}
-
-
 
 /* メンバー一覧 */
 .member-list {
