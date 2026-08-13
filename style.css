@@ -139,3 +139,52 @@ h1 {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+/* --- ここから更新一覧のネオンCSS --- */
+
+.update-list {
+  background: #0a0a0f;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px #0ff;
+  color: #e6faff;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.update-list h2 {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+.update-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update-list li {
+  background: rgba(0, 255, 255, 0.05);
+  border-left: 3px solid #0ff;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.update-list li:hover {
+  background: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 10px #0ff;
+}
+
+.update-list .date {
+  color: #ff66ff;
+  font-weight: bold;
+  margin-right: 10px;
+  text-shadow: 0 0 8px #ff66ff;
+}
+
+.update-list .title {
+  color: #e6faff;
+}
