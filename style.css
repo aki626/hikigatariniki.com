@@ -39,13 +39,17 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* ルール */
 .rules {
-  background: #111;
-  padding: 10px;
-  border-left: 4px solid #0ff;
-  margin-bottom: 30px;
+  background: #111;                 
+  padding: 20px;                    
+  border-left: 4px solid #0ff;     
+  border-radius: 12px;              
+  box-shadow: 0 0 15px #0ff;        
+  margin-bottom: 30px;              
+  color: #e6faff;                   
+  font-family: "Noto Sans JP", sans-serif;
 }
+
 
 /* メンバー一覧 */
 .member-list {
